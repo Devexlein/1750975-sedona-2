@@ -5,7 +5,7 @@
     <title>Город Седона в Аризоне</title>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header" data-test="header">
       <a class="nav-logo" href="index.html" aria-current="page">
         <img class="logo-img" src="#" width="140" height="70" alt="Логотип города Седона">
       </a>
@@ -42,14 +42,14 @@
       <a class="button-brown button" href="#">Хочу сюда!</a>
     </header>
 
-    <main class="main-index">
+    <main class="main-index" data-test="main">
       <h1 class="visually-hidden">Седона - городок в Аризоне</h1>
-      <section class="welcome-section">
+      <section class="welcome-section" data-test="hero">
         <!-- Переделать на тег svg, добавить в разметку атрибут role="img" и переместить описание изображения в атрибут aria-label -->
         <img class="welcome-img" src="#" width="458" height="352" alt="Welcome to the gordeous Sedona 'Becouse the Grand Canyon sucks!'">
       </section>
 
-      <section class="advantages">
+      <section class="advantages" data-test="advantages">
         <header class="advantages-header">
           <h2 class="visually-hidden">Преимущества городка Седоны</h2>
           <p class="advantages-slogan section-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
@@ -104,13 +104,13 @@
         </ul>
       </section>
 
-      <section class="search">
+      <section class="search" data-test="search">
         <h2 class="search-title section-title">Заинтересовались?</h2>
         <p class="search-description section-description">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
         <button class="button-modal-open button-brown button" type="submit">Поиск гостиницы в Седоне</button>
       </section>
 
-      <section class="newsletter-main-index newsletter">
+      <section class="newsletter-main-index newsletter" data-test="subscribe">
         <h2 class="newsletter-title section-title">Подпишитесь на рассылку</h2>
         <p class="newsletter-description section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
@@ -121,7 +121,7 @@
       </section>
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer" data-test="footer">
       <ul class="footer-social-list">
         <li class="footer-social-item">
           <a class="button" href="https://vk.com/htmlacademy">
