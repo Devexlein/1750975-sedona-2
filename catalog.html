@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гостиницы города Седоны</title>
+    <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
   </head>
   <body>
+    <!-- Шапка -->
     <header class="page-header" data-test="header">
-      <a class="nav-logo" href="index.html">
-        <img class="logo-img" src="#" width="140" height="70" alt="Логотип города Седона">
+      <a class="nav-logo" href="index.html" aria-current="page">
+        <img class="logo-img" src="images/logo-sedona.svg" width="140" height="70" alt="Логотип города Седона">
       </a>
       <nav class="nav">
         <ul class="nav-list">
           <li class="nav-item">
-            <a class="nav-link-current nav-link" href="index.html">Главная</a>
+            <a class="nav-link-current nav-link" href="index.html" aria-current="page">Главная</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">О Седоне</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="catalog.html" aria-current="page">Гостиницы</a>
+            <a class="nav-link" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
         <ul class="nav-user nav-list">
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <span class="visually-hidden">Поиск</span>
+              <span class="visually-hidden">
+                Поиск
+              </span>
             </a>
           </li>
           <li class="nav-item">
@@ -42,6 +46,7 @@
     </header>
 
     <main class="main-inner" data-test="main">
+      <!-- Форма фильтра гостиниц -->
       <form class="hotels-filter-form" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
         <header class="inner-header">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
@@ -129,7 +134,7 @@
           <button class="hotels-filter-buttons-reset button" type="reset">Сбросить</button>
         </div>
       </form>
-
+      <!-- Шапка каталога гостиниц с настройкой отображения -->
       <section class="hotels" data-test="catalog">
         <h2 class="visually-hidden">Результат поиска гостиниц</h2>
         <p class="hotels-result">Найдено гостиниц:<span>38</span></p>
@@ -149,11 +154,16 @@
             <span class="visually-hidden">Показать список</span>
           </a>
         </div>
-
+        <!-- Каталог гостиниц, отобранных по фильтрам -->
         <ul class="hotels-list">
           <li class="hotel-card">
             <a class="hotel-card-link" href="#" tabindex="-1">
-              <img class="hotel-card-img" src="#" alt="Вид на звездное небо изнутри пещеры">
+              <picture class="hotel-card-img">
+                <source srcset="images/catalog/hotel-1.avif" type="image/avif">
+                <source srcset="images/catalog/hotel-1.webp" type="image/webp">
+                <source srcset="images/catalog/hotel-1.jpg" type="image/jpeg">
+                <img src="images/catalog/hotel-1.jpg" srcset="images/catalog/hotel-1@2x.jpg" width="300" height="212" alt="Вид на звездное небо изнутри пещеры">
+              </picture>
             </a>
             <a class="hotel-card-link" href="#" tabindex="-1">
               <h3 class="hotel-card-title" lang="en">Amara Resort & Spa</h3>
@@ -175,7 +185,12 @@
           </li>
           <li class="hotel-card">
             <a class="hotel-card-link" href="#" tabindex="-1">
-              <img class="hotel-card-img" src="#" alt="Красные скальные образования Седоны и радуга на темном небе">
+              <picture class="hotel-card-img">
+                <source srcset="images/catalog/hotel-2.avif" type="image/avif">
+                <source srcset="images/catalog/hotel-2.webp" type="image/webp">
+                <source srcset="images/catalog/hotel-2.jpg" type="image/jpeg">
+                <img src="images/catalog/hotel-2.jpg" srcset="images/catalog/hotel-2@2x.jpg" width="300" height="212" alt="расные скальные образования Седоны и радуга на темном небе">
+              </picture>
             </a>
             <a class="hotel-card-link" href="#" tabindex="-1">
               <h3 class="hotel-card-title" lang="en">Villas at Poco Diablo</h3>
@@ -197,7 +212,12 @@
           </li>
           <li class="hotel-card">
             <a class="hotel-card-link" href="#" tabindex="-1">
-              <img class="hotel-card-img" src="#" alt="Высокая красная скальная гора в Седоне">
+              <picture class="hotel-card-img">
+                <source srcset="images/catalog/hotel-3.avif" type="image/avif">
+                <source srcset="images/catalog/hotel-3.webp" type="image/webp">
+                <source srcset="images/catalog/hotel-3.jpg" type="image/jpeg">
+                <img src="images/catalog/hotel-3.jpg" srcset="images/catalog/hotel-3@2x.jpg" width="300" height="212" alt="Высокая красная скальная гора в Седоне">
+              </picture>
             </a>
             <a class="hotel-card-link" href="#" tabindex="-1">
               <h3 class="hotel-card-title" lang="en">Desert Quail Inn</h3>
@@ -219,7 +239,12 @@
           </li>
           <li class="hotel-card">
             <a class="hotel-card-link" href="#" tabindex="-1">
-              <img class="hotel-card-img" src="#" alt="Красные скальные образования Седоны под ночным звездным небом">
+              <picture class="hotel-card-img">
+                <source srcset="images/catalog/hotel-4.avif" type="image/avif">
+                <source srcset="images/catalog/hotel-4.webp" type="image/webp">
+                <source srcset="images/catalog/hotel-4.jpg" type="image/jpeg">
+                <img src="images/catalog/hotel-4.jpg" srcset="images/catalog/hotel-4@2x.jpg" width="300" height="212" alt="Красные скальные образования Седоны под ночным звездным небом">
+              </picture>
             </a>
             <a class="hotel-card-link" href="#" tabindex="-1">
               <h3 class="hotel-card-title" lang="en">GreenTree Inn</h3>
@@ -240,7 +265,7 @@
             </div>
           </li>
         </ul>
-
+        <!-- Пагинация -->
         <ul class="pagination">
           <li class="pagination-item">
             <a class="pagination-link pagination-current" aria-current="page">1</a>
@@ -262,7 +287,7 @@
           </li>
         </ul>
       </section>
-
+      <!-- Форма подписки на рассылку -->
       <section class="newsletter-main-inner newsletter" data-test="subscribe">
         <h2 class="newsletter-title section-title">Подпишитесь на рассылку</h2>
         <p class="newsletter-description section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
@@ -273,28 +298,28 @@
         </form>
       </section>
     </main>
-
+    <!-- Футер -->
     <footer class="page-footer" data-test="footer">
       <ul class="footer-social-list">
         <li class="footer-social-item">
-          <a class="button" href="https://vk.com/htmlacademy">
+          <a class="button" href="https://vk.com/htmlacademy" target="_blank" rel="noreferrer noopener">
             <span class="visually-hidden" lang="en">Vkontakte</span>
           </a>
         </li>
         <li class="footer-social-item">
-          <a class="button" href="https://t.me/htmlacademy ">
+          <a class="button" href="https://t.me/htmlacademy" target="_blank" rel="noreferrer noopener">
             <span class="visually-hidden" lang="en">Telegram</span>
           </a>
         </li>
         <li class="footer-social-item">
-          <a class="button" href="https://www.youtube.com/user/htmlacademyru">
+          <a class="button" href="https://www.youtube.com/user/htmlacademyru" target="_blank" rel="noreferrer noopener">
             <span class="visually-hidden" lang="en">Youtube</span>
           </a>
         </li>
       </ul>
       <a class="footer-contact-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-      <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss">
-        <img class="htmlacademy-logo" src="#" width="115" height="33" alt="Логотип HTML Academy">
+      <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" rel="noreferrer noopener">
+        <img class="htmlacademy-logo" src="images/logo-html-academy.svg" width="115" height="33" alt="Логотип HTML Academy">
       </a>
     </footer>
   </body>
