@@ -1,6 +1,6 @@
 @font-face {
   font-family: "PT Sans";
-  src: url(../fonts/ptsans-400.woff2) format("woff2");
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "PT Sans";
-  src: url(../fonts/ptsans-700.woff2) format("woff2");
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -20,8 +20,8 @@
   --basic-white: #ffffff;
   --basic-brown: #756158;
   --basic-grey: #333333;
-  --grey-light: #e5e5e5;
-  --grey-ultralight: #f2f2f2;
+  --light-grey: #e5e5e5;
+  --ultralight-grey: #f2f2f2;
   --second-color: #82b3d3;
   --second-rgba20-color: rgb(131, 179, 211, 0.2);
   --second-rgba12-color: rgb(131, 179, 211, 0.12);
@@ -39,14 +39,14 @@
   --bg-second-rgba20-color: var(--second-rgba20-color);
   --bg-second-rgba12-color: var(--second-rgba12-color);
   --bg-duplicate-color: var(--duplicate-color);
-  --bg-ultralight-color: var(--grey-ultralight);
+  --bg-ultralight-color: var(--ultralight-grey);
 
   --button-bg-basic: var(--basic-brown);
   --button-bg-second: var(--second-color);
   --button-bg-favorite: var(--favorite-color);
 
   --border-basic-color: var(--basic-black);
-  --border-light-color: var(--grey-light);
+  --border-light-color: var(--light-grey);
 }
 
 *,
@@ -59,6 +59,7 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
+  height: 100vh;
 
   font-family: "PT Sans", sans-serif;
   font-size: 22px;
@@ -75,7 +76,7 @@ img {
   object-fit: contain;
 }
 
-/* .visually-hidden {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -86,16 +87,15 @@ img {
   white-space: nowrap;
   clip: rect(0 0 0 0);
   overflow: hidden;
-} */
+}
 
 .wrapper {
   width: 1200px;
 
   background-color: var(--bg-primary-color, #ffffff);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px var(--basic-rgba20-black);
 }
 
-.wrapper a,
 .wrapper button,
 .wrapper input,
 .wrapper select {
@@ -140,16 +140,43 @@ img {
   background-color: var(--button-bg-favorite, #7db64f);
 }
 
-.button-transparent {
+.button-reset {
   background-color: transparent;
 }
 
 /* Шапка */
 .nav-link {
+  display: inline-block;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: inherit;
+}
+
+.nav-user .nav-item {
+  margin: 0;
+  padding: 12px;
+}
+
+.nav-user .nav-link {
+  padding: 12px;
+  width: 20px;
+  height: 20px;
+}
+
+.search-link {
+  background-image: url("../images/icons/search.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.heart-link {
+  background-image: url("../images/icons/heart.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
 }
 
 .nav-user-link-counter {
@@ -170,12 +197,12 @@ img {
   text-align: center;
 }
 
-.box-text-on-bg {
+.box-text-on-bg  {
+  color: var(--text-on-bg-color, #ffffff);
   background-color: var(--bg-duplicate-color, #bbd4ea);
 }
 
-.box-text-on-bg > *,
-.box-text-on-bg > p {
+.box-text-on-bg .on-bg  {
   color: var(--text-on-bg-color, #ffffff);
 }
 
@@ -218,9 +245,8 @@ img {
   color: var(--text-second-color, #333333);
 }
 
-.advantages-list li:first-child,
-.advantages-list li:last-child  {
-  background-color: var(--bg-second-color, #82b3d3);
+.advantages-list li {
+  background-color: var(--bg-second-rgba20-color, rgb(131, 179, 211, 0.2));
 }
 
 .advantages-list li:nth-child(even),
@@ -228,8 +254,9 @@ img {
   background-color: var(--bg-second-rgba12-color, rgb(131, 179, 211, 0.12));
 }
 
-.advantages-list li:nth-child(3) {
-  background-color: var(--bg-second-rgba20-color, rgb(131, 179, 211, 0.2));
+.advantages-list li:first-child,
+.advantages-list li:last-child  {
+  background-color: var(--bg-second-color, #82b3d3);
 }
 
 /* Форма подписки на рассылку */
@@ -245,20 +272,11 @@ img {
 }
 
 .newsletter-email {
+  font-size: 18px;
+  line-height: 24px;
   background: var(--bg-ultralight-color, #f2f2f2);
   border: none;
   border-radius: 4px 0 0 4px;
-}
-
- /*Chrome/Opera/Safari*/
-::-webkit-input-placeholder {
-  font-size: 18px;
-  line-height: 24px;
-}
-/*Firefox 19+*/
-::-moz-placeholder {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .newsletter-button {
@@ -282,6 +300,17 @@ img {
   text-align: center;
 }
 
+.hotels-filter {
+  background-image: image-set(
+    url("../images/backgrounds/hotels-filter-form-bg.avif") type("image/avif"),
+    url("../images/backgrounds/hotels-filter-form-bg.webp") type("image/webp"),
+    url("../images/backgrounds/hotels-filter-form-bg.jpg") type("image/jpg")
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+}
+
 .inner-header-title {
   font-weight: 700;
   font-size: 60px;
@@ -293,17 +322,6 @@ img {
   font-size: 16px;
   line-height: 21px;
   text-align: left;
-}
-
-.hotels-filter-form {
-  background-image: image-set(
-    url("../images/backgrounds/hotels-filter-form-bg.avif") type("image/avif"),
-    url("../images/backgrounds/hotels-filter-form-bg.webp") type("image/webp"),
-    url("../images/backgrounds/hotels-filter-form-bg.jpg") type("image/jpg")
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left top;
 }
 
 .hotels-filter-form a {
@@ -337,16 +355,19 @@ img {
 .view {
   font-size: 18px;
   line-height: 21px;
+  background-color: var(--bg-primary-color, #ffffff);
   border: 2px solid var(--border-light-color, #e5e5e5);
+  border-radius: 4px;
 }
 
 .hotels-select {
   color: var(--text-second-color, #333333);
-  background-color: var(--bg-primary-color, #ffffff);
-  border-radius: 4px;
 }
 
 .view {
+  display: inline-block;
+  margin: 0;
+  padding: 16px;
   text-transform: none;
   color: var(--text-primary-color, #000000);
 }
@@ -354,6 +375,27 @@ img {
 .view-current {
   border: 2px solid var(--border-basic-color, #000000);
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.view-table {
+  background-image: url("../images/icons/view-table.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position: center;
+}
+
+.view-slideshow {
+  background-image: url("../images/icons/view-slideshow.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position: center;
+}
+
+.view-list {
+  background-image: url("../images/icons/view-list.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position: center;
 }
 
 /* Каталог гостиниц, отобранных по фильтрам */
