@@ -27,15 +27,15 @@
             </li>
           </ul>
           <ul class="nav-user nav-list">
-            <li class="nav-user-item nav-item">
-              <a class="nav-user-link nav-link" href="#">
+            <li class="nav-item">
+              <a class="search-link nav-link" href="#">
                 <span class="visually-hidden">
                   Поиск
                 </span>
               </a>
             </li>
             <li class="nav-user-item nav-item">
-              <a class="nav-user-link-counter nav-user-link nav-link" href="#">
+              <a class="heart-link nav-user-link-counter nav-link" href="#">
                 <span class="visually-hidden">В избранном сейчас</span>
                 <span class="counter">12</span>
                 <span class="visually-hidden">отелей</span>
@@ -48,13 +48,12 @@
       </header>
       <!-- Основной контент страницы каталога -->
       <main class="main-inner" data-test="main">
-        <!-- Форма фильтра гостиниц -->
-        <form class="hotels-filter-form box-text-on-bg" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
+        <section class="hotels-filter box-text-on-bg">
           <header class="inner-header">
             <h1 class="inner-header-title">Гостиницы Седоны</h1>
             <ul class="breadcrumbs">
               <li class="breadcrumbs-item">
-                <a class="breadcrumbs-link" href="index.html">
+                <a class="breadcrumbs-link on-bg" href="index.html">
                   <span class="visually-hidden">Главная</span>
                 </a>
               </li>
@@ -63,7 +62,8 @@
               </li>
             </ul>
           </header>
-          <section class="hotels-filter">
+          <!-- Форма фильтра гостиниц -->
+          <form class="hotels-filter-form" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
             <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
             <fieldset class="hotels-filter-group">
               <legend class="hotels-filter-title">Инфраструктура:</legend>
@@ -130,12 +130,13 @@
                 <input class="hotels-filter-range-input" id="tailpraice2" type="range" min="0" value="9000">
               </div>
             </fieldset>
-          </section>
-          <div class="hotels-filter-buttons">
-            <button class="hotels-filter-buttons-submit button-second button-small button" type="submit">Применить</button>
-            <button class="hotels-filter-buttons-reset button-transparent button-small button" type="reset">Сбросить</button>
-          </div>
-        </form>
+
+            <div class="hotels-filter-buttons">
+              <button class="button-second button-small button" type="submit">Применить</button>
+              <button class="button-reset button-small button" type="reset">Сбросить</button>
+            </div>
+          </form>
+        </section>
         <!-- Шапка каталога гостиниц с настройкой отображения -->
         <section class="hotels" data-test="catalog">
           <h2 class="visually-hidden">Результат поиска гостиниц</h2>
@@ -146,13 +147,13 @@
             <option value="expensive">Сначала дорогие</option>
           </select>
           <div class="display-cards">
-            <a class="view-current view button-transparent button" href="catalog.html?view=tile">
+            <a class="view-table view-current view" href="catalog.html?view=tile">
               <span class="visually-hidden">Показать карточки</span>
             </a>
-            <a class="view button-transparent button" href="catalog.html?view=card">
+            <a class="view-slideshow view" href="catalog.html?view=card">
               <span class="visually-hidden">Показать крупным планом</span>
             </a>
-            <a class="view button-transparent button" href="catalog.html?view=list">
+            <a class="view-list view" href="catalog.html?view=list">
               <span class="visually-hidden">Показать список</span>
             </a>
           </div>
@@ -175,8 +176,8 @@
                 <b>От 4000 ₽</b>
               </div>
               <div class="hotel-card-buttons">
-                <a class="hotel-card-button button-small button" href="#">Подробнее</a>
-                <button class="hotel-card-button button-second button-small button" type="button">В избранное</button>
+                <a class="button-small button" href="#">Подробнее</a>
+                <button class="button-second button-small button" type="button">В избранное</button>
               </div>
               <div class="hotel-card-rating">
                 <p class="four-stars stars">
@@ -202,8 +203,8 @@
                 <b>От 5000 ₽</b>
               </div>
               <div class="hotel-card-buttons">
-                <a class="hotel-card-button button-small button" href="#">Подробнее</a>
-                <button class="hotel-card-button button-favorite button-small button" type="button">В избранное</button>
+                <a class="button-small button" href="#">Подробнее</a>
+                <button class="button-favorite button-small button" type="button">В избранное</button>
               </div>
               <div class="hotel-card-rating">
                 <p class="four-stars stars">
@@ -229,8 +230,8 @@
                 <b>От 2500 ₽</b>
               </div>
               <div class="hotel-card-buttons">
-                <a class="hotel-card-button button-small button" href="#">Подробнее</a>
-                <button class="hotel-card-button button-second button-small button" type="button">В избранное</button>
+                <a class="button-small button" href="#">Подробнее</a>
+                <button class="button-second button-small button" type="button">В избранное</button>
               </div>
               <div class="hotel-card-rating">
                 <p class="three-stars stars">
@@ -256,8 +257,8 @@
                 <b>От 1500 ₽</b>
               </div>
               <div class="hotel-card-buttons">
-                <a class="hotel-card-button button-small button" href="#">Подробнее</a>
-                <button class="hotel-card-button button-second button-small button" type="button">В избранное</button>
+                <a class="button-small button" href="#">Подробнее</a>
+                <button class="button-second button-small button" type="button">В избранное</button>
               </div>
               <div class="hotel-card-rating">
                 <p class="two-stars stars">
@@ -291,8 +292,8 @@
         </section>
         <!-- Форма подписки на рассылку -->
         <section class="newsletter-main-inner newsletter" data-test="subscribe">
-          <h2 class="newsletter-title section-title">Подпишитесь на рассылку</h2>
-          <p class="newsletter-description section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
+          <h2 class="section-title">Подпишитесь на рассылку</h2>
+          <p class="section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
             <label class="visually-hidden" for="newsletter-email">Укажите ваш email</label>
             <input class="newsletter-email" type="email" id="newsletter-email" name="newsletter-email" placeholder="Ваш e-mail" required>
