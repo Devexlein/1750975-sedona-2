@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <div class="wrapper">
+    <div class="page-container">
       <!-- Шапка -->
       <header class="page-header" data-test="header">
         <a class="nav-logo" href="index.html">
@@ -27,7 +27,7 @@
             </li>
           </ul>
           <ul class="nav-user nav-list">
-            <li class="nav-item">
+            <li class="nav-user-item nav-item">
               <a class="search-link nav-link" href="#">
                 <span class="visually-hidden">
                   Поиск
@@ -35,7 +35,7 @@
               </a>
             </li>
             <li class="nav-user-item nav-item">
-              <a class="heart-link nav-user-link-counter nav-link" href="#">
+              <a class="heart-link nav-link" href="#">
                 <span class="visually-hidden">В избранном сейчас</span>
                 <span class="counter">12</span>
                 <span class="visually-hidden">отелей</span>
@@ -139,23 +139,25 @@
         </section>
         <!-- Шапка каталога гостиниц с настройкой отображения -->
         <section class="hotels" data-test="catalog">
-          <h2 class="visually-hidden">Результат поиска гостиниц</h2>
-          <p class="hotels-result section-title">Найдено гостиниц:<span>38</span></p>
-          <select class="hotels-select" aria-label="Сортировка">
-            <option value="popular">Сначала популярные</option>
-            <option value="cheap" selected>Сначала дешевые</option>
-            <option value="expensive">Сначала дорогие</option>
-          </select>
-          <div class="display-cards">
-            <a class="view-table view-current view" href="catalog.html?view=tile">
-              <span class="visually-hidden">Показать карточки</span>
-            </a>
-            <a class="view-slideshow view" href="catalog.html?view=card">
-              <span class="visually-hidden">Показать крупным планом</span>
-            </a>
-            <a class="view-list view" href="catalog.html?view=list">
-              <span class="visually-hidden">Показать список</span>
-            </a>
+          <div class="hotels-header">
+            <h2 class="visually-hidden">Результат поиска гостиниц</h2>
+            <p class="hotels-result section-title">Найдено гостиниц:<span>38</span></p>
+            <select class="hotels-select" aria-label="Сортировка">
+              <option value="popular">Сначала популярные</option>
+              <option value="cheap" selected>Сначала дешевые</option>
+              <option value="expensive">Сначала дорогие</option>
+            </select>
+            <div class="display-cards">
+              <a class="view-table view-current view" href="catalog.html?view=tile">
+                <span class="visually-hidden">Показать карточки</span>
+              </a>
+              <a class="view-slideshow view" href="catalog.html?view=card">
+                <span class="visually-hidden">Показать крупным планом</span>
+              </a>
+              <a class="view-list view" href="catalog.html?view=list">
+                <span class="visually-hidden">Показать список</span>
+              </a>
+            </div>
           </div>
           <!-- Каталог гостиниц, отобранных по фильтрам -->
           <ul class="hotels-list">
