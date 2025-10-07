@@ -115,8 +115,7 @@ img {
   text-decoration: none;
 }
 
-.page-container ul,
-.page-container ol {
+.list {
   padding: 0;
   list-style: none;
 }
@@ -193,12 +192,15 @@ img {
 .page-header {
   padding: 0 70px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-logo {
   margin-right: 28px;
+  margin-bottom: -5px;
+  z-index: 2;
 }
 
 .logo-img {
@@ -213,15 +215,16 @@ img {
   width: 710px;
 }
 
+.nav .nav-user {
+  gap: 0;
+}
+
 .nav-list {
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-}
-
-.nav-item ~ .nav-item:not(.nav-user .nav-item) {
-  margin-left: 8px;
+  gap: 8px;
 }
 
 .nav-link {
@@ -236,7 +239,7 @@ img {
 
 .nav-user .nav-link {
   width: 44px;
-  height: 44px;
+  height: 54px;
 }
 
 .search-link {
@@ -261,12 +264,13 @@ img {
 
 .counter {
   margin-left: 50%;
-  margin-top: -50%;
+  margin-top: -25%;
   display: flex;
   width: 20px;
   height: 20px;
   justify-content: center;
   align-items: center;
+  font-weight: 400;
   color: var(--text-on-bg-color, #ffffff);
   border-radius: 50%;
   background-color: var(--button-bg-favorite, #7db64f);
@@ -432,7 +436,15 @@ img {
   align-items: center;
 }
 
+.footer-social-list {
+  display: flex;
+}
+
 .footer-social-link {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: inherit;
 }
 
@@ -535,12 +547,20 @@ img {
 .hotels-header {
   margin-bottom: 40px;
   display: flex;
-  justify-content: space-between;
+}
+
+.hotels-result {
+  margin-right: auto;
 }
 
 .hotels-result span {
   margin-left: 8px;
 }
+
+.display-cards {
+  margin-left: 70px;
+}
+
 .hotels-select,
 .view {
   font-size: 18px;
@@ -555,6 +575,7 @@ img {
   width: 332px;
   appearance: none;
   color: var(--text-second-color, #333333);
+  cursor: pointer;
 }
 
 .display-cards {
@@ -642,6 +663,7 @@ img {
 /* Пагинация */
 .pagination {
   display: flex;
+  gap: 8px;
 }
 
 .pagination .button,
@@ -652,10 +674,6 @@ img {
   padding: 10px;
   width: 60px;
   height: 60px;
-}
-
-.pagination-item ~ .pagination-item {
-  margin-left: 8px;
 }
 
 .pagination-current {
