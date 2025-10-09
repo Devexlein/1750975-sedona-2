@@ -470,6 +470,7 @@ img {
 }
 
 .footer-social-list {
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
 }
