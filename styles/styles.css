@@ -174,14 +174,10 @@ img {
 .box-wrap {
   margin: 0 auto;
   padding: 81px 85px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .box-title {
-  margin: 0;
+  margin: 0 auto;
   margin-bottom: 30px;
   padding-bottom: 30px;
   font-weight: 700;
