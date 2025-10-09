@@ -328,8 +328,6 @@ img {
 .infrastructure,
 .search,
 .newsletter {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -337,8 +335,6 @@ img {
 .infrastructure-header {
   margin: 0 auto 90px;
   padding: 65px 70px 0;
-  display: flex;
-  flex-direction: column;
   width: 795px;
 }
 
@@ -434,6 +430,7 @@ img {
 }
 
 .newsletter .section-description {
+  margin: 0 auto;
   max-width: 475px;
 }
 
