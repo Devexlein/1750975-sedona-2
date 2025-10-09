@@ -92,6 +92,11 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+/* Стилизация списков */
+.list {
+  padding: 0;
+  list-style: none;
+}
 
 .page-container {
   margin: 0 auto;
@@ -113,11 +118,6 @@ img {
 
 .page-container a {
   text-decoration: none;
-}
-
-.list {
-  padding: 0;
-  list-style: none;
 }
 
 .button {
@@ -155,6 +155,7 @@ img {
 
 .section-title {
   margin: 0;
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -166,7 +167,23 @@ img {
   color: var(--text-second-color, #333333);
 }
 
+.section-description + .section-description {
+  margin-top: 10px;
+}
+
+.box-wrap {
+  margin: 0 auto;
+  padding: 81px 85px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .box-title {
+  margin: 0;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -174,9 +191,14 @@ img {
 }
 
 .box-description {
+  margin: 0;
   font-size: 18px;
   line-height: 21px;
   color: var(--text-second-color, #333333);
+}
+
+.box-description + .box-description {
+  margin-top: 8px;
 }
 
 .box-text-on-bg  {
@@ -200,6 +222,7 @@ img {
 .nav-logo {
   margin-right: 28px;
   margin-bottom: -5px;
+  align-self: start;
   z-index: 2;
 }
 
@@ -215,10 +238,6 @@ img {
   width: 710px;
 }
 
-.nav .nav-user {
-  gap: 0;
-}
-
 .nav-list {
   margin: 0;
   padding: 0;
@@ -227,9 +246,13 @@ img {
   gap: 8px;
 }
 
+.nav .nav-user {
+  gap: 0;
+}
+
 .nav-link {
   padding: 12px;
-  display: inline-block;
+  display: block;
 
   font-size: 20px;
   font-weight: 700;
@@ -238,8 +261,8 @@ img {
 }
 
 .nav-user .nav-link {
-  width: 44px;
-  height: 54px;
+  min-width: 44px;
+  min-height: 54px;
 }
 
 .search-link {
@@ -266,8 +289,8 @@ img {
   margin-left: 50%;
   margin-top: -25%;
   display: flex;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   justify-content: center;
   align-items: center;
   font-weight: 400;
@@ -288,6 +311,8 @@ img {
 }
 
 .welcome-section {
+  padding: 51px 70px 82px;
+
   background-image: url("../images/backgrounds/welcome-bg-bottom.svg"),
   image-set(
     url("../images/backgrounds/welcome-bg@2x.avif") type("image/avif") 2x,
@@ -309,15 +334,20 @@ img {
 .newsletter {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .advantages-header,
 .infrastructure-header {
-  margin: 0 auto;
-  padding: 65px 70px;
+  margin: 0 auto 90px;
+  padding: 65px 70px 0;
   display: flex;
   flex-direction: column;
   width: 795px;
+}
+
+.infrastructure-header {
+  margin-bottom: 64px;
 }
 
 .advantages-list,
@@ -331,18 +361,15 @@ img {
   width: 175px;
 }
 
-.advantages-list .box-description,
-.infrastructure-list .box-description {
-  width: 230px;
-}
-
 .advantages-list li,
 .infrastructure-list li {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-grow: 1;
   width: 400px;
+  min-height: 385px;
 }
 
 .advantages-list li {
@@ -363,10 +390,14 @@ img {
 }
 
 .advantages-list .box-wrap {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-top: 102px;
+  padding-bottom: 102px;
+  flex-basis: 33%;
+}
+
+.infrastructure-list .box-title {
+  padding-top: 102px;
+  padding-bottom: 0;
 }
 
 .advantages-list img {
@@ -380,12 +411,13 @@ img {
 
 /* Поиск гостиниц */
 .search {
-  margin: 0 auto;
-  padding: 96px 70px;
+  margin: 0 auto 96px;
+  padding: 96px 70px 0;
   max-width: 840px;
 }
 
 .search button {
+  margin-top: 54px;
   align-self: center;
 }
 
@@ -393,6 +425,7 @@ img {
 .newsletter {
   padding: 96px 70px 104px;
 }
+
 .newsletter-main-index {
   background-image: image-set(
     url("../images/backgrounds/newsletter-bg.avif") type("image/avif"),
@@ -405,11 +438,11 @@ img {
 }
 
 .newsletter .section-description {
-  margin: 0 auto;
   max-width: 475px;
 }
 
 .newsletter-form {
+  margin-top: 54px;
   display: flex;
   justify-content: center;
 }
@@ -438,6 +471,7 @@ img {
 
 .footer-social-list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-social-link {
@@ -445,6 +479,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 48px;
+  min-height: 40px;
   color: inherit;
 }
 
@@ -466,7 +502,7 @@ img {
 
 /* Форма фильтра гостиниц */
 .hotels-filter {
-  padding: 35px 70px 70px;
+  padding: 35px 70px 0;
   display: flex;
   flex-direction: column;
   background-image: image-set(
@@ -480,6 +516,9 @@ img {
 }
 
 .inner-header-title {
+  margin: 0;
+  margin-bottom: 8px;
+
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
@@ -487,6 +526,7 @@ img {
 }
 
 .breadcrumbs {
+  margin: 0 0 40px;
   display: flex;
 
   font-size: 16px;
@@ -494,11 +534,13 @@ img {
   text-align: left;
 }
 
-.breadcrumbs-item + .breadcrumbs-item {
-  margin-left: 10px;
+.breadcrumbs-item:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 18px;
 }
 
 .hotels-filter-form {
+  margin-bottom: 70px;
   display: flex;
   justify-content: space-between;
 }
@@ -541,24 +583,22 @@ img {
 
 /* Шапка каталога гостиниц с настройкой отображения */
 .hotels {
-  padding: 50px 70px 60px;
+  padding: 50px 70px 0;
 }
 
 .hotels-header {
   margin-bottom: 40px;
   display: flex;
+  align-items: center;
 }
 
 .hotels-result {
+  margin: 0;
   margin-right: auto;
 }
 
 .hotels-result span {
   margin-left: 8px;
-}
-
-.display-cards {
-  margin-left: 70px;
 }
 
 .hotels-select,
@@ -579,14 +619,17 @@ img {
 }
 
 .display-cards {
+  margin-left: 70px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
 }
 
 .view {
-  width: 48px;
-  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   text-transform: none;
   color: var(--text-primary-color, #000000);
 }
@@ -619,6 +662,7 @@ img {
 
 /* Каталог гостиниц, отобранных по фильтрам */
 .hotels-list {
+  margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -628,7 +672,7 @@ img {
   padding: 20px;
   width: 340px;
   color: var(--text-second-color, #333333);
-  border: 1px solid var(--border-middle-color, #e6e6e6);
+  box-shadow: 0 0 0 1px var(--border-middle-color, #e6e6e6);
   border-radius: 4px;
 }
 
@@ -662,8 +706,11 @@ img {
 
 /* Пагинация */
 .pagination {
+  margin: 0 0 60px 0;
+  padding-top: 40px;
   display: flex;
   gap: 8px;
+  border-top: 1px solid var(--border-middle-color, #e6e6e6);
 }
 
 .pagination .button,
@@ -672,8 +719,8 @@ img {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 .pagination-current {
