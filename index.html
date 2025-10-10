@@ -11,7 +11,7 @@
       <!-- Шапка -->
       <header class="page-header" data-test="header">
         <a class="nav-logo" href="index.html" aria-current="page">
-          <img class="logo-img" src="images/logo-sedona.svg" width="140" height="70" alt="Логотип города Седона.">
+          <img class="logo-image" src="images/logo-sedona.svg" width="140" height="70" alt="Логотип города Седона">
         </a>
         <nav class="nav">
           <ul class="nav-list list">
@@ -49,7 +49,7 @@
       <main class="main-index" data-test="main">
         <h1 class="visually-hidden">Седона - городок в Аризоне</h1>
         <section class="welcome-section box-text-on-bg" data-test="hero">
-          <img class="welcome-img" src="images/hero-welcome.svg" width="458" height="352" alt="Welcome to the gorgeous Sedona 'Because the Grand Canyon sucks!'" lang="en">
+          <img class="welcome-image" src="images/hero-welcome.svg" width="458" height="352" alt="Welcome to the gorgeous Sedona 'Because the Grand Canyon sucks!'" lang="en">
         </section>
         <!-- Преимущества -->
         <section class="advantages" data-test="advantages">
@@ -59,46 +59,42 @@
             <p class="section-description">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           </header>
           <ul class="advantages-list list">
-            <li class="box-text-on-bg box">
+            <!-- Для боксов с изображением добавляем класс box-with-image
+              и обертку для текста с классом box-wrap -->
+            <li class="box-text-on-bg box-with-image box">
               <div class="box-wrap">
                 <h3 class="on-bg box-title">Настоящий городок</h3>
                 <p class="on-bg box-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
               </div>
-              <picture class="box-img">
+              <picture class="box-image">
                 <source srcset="images/advantages/advantage-1@1x.avif 1x, images/advantages/advantage-1@2x.avif 2x" width="800" height="385" type="image/avif">
                 <source srcset="images/advantages/advantage-1@1x.webp 1x, images/advantages/advantage-1@2x.webp 2x" width="800" height="385" type="image/webp">
                 <source srcset="images/advantages/advantage-1@1x.jpg 1x, images/advantages/advantage-1@2x.jpg 2x" width="800" height="385" type="image/jpeg">
-                <img src="images/advantages/advantage-1@1x.jpg" width="800" height="385" alt="Двухэтажные деревянные домики с каменной отделкой на фоне гор.">
+                <img src="images/advantages/advantage-1@1x.jpg" width="800" height="385" alt="Двухэтажные деревянные домики с каменной отделкой на фоне гор">
               </picture>
             </li>
             <li class="box">
-              <div class="box-wrap">
                 <h3 class="box-title">Небольшая площадь</h3>
                 <p class="box-description">Все достопримечательности находятся очень близко</p>
-              </div>
             </li>
             <li class="box">
-              <div class="box-wrap">
                 <h3 class="box-title">Красивая дорога</h3>
                 <p class="box-description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-              </div>
             </li>
             <li class="box">
-              <div class="box-wrap">
                 <h3 class="box-title">Мало туристов</h3>
                 <p class="box-description">Большинство едет в Гранд Каньон и толпится там</p>
-              </div>
             </li>
-            <li class="box-text-on-bg box">
+            <li class="box-text-on-bg box-with-image box">
               <div class="box-wrap">
                 <h3 class="on-bg box-title">Там есть мост&nbsp;дьявола</h3>
                 <p class="on-bg box-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               </div>
-              <picture class="box-img-left box-img">
+              <picture class="box-image-left box-image">
                 <source srcset="images/advantages/advantage-2@1x.avif 1x, images/advantages/advantage-2@2x.avif 2x" width="800" height="385" type="image/avif">
                 <source srcset="images/advantages/advantage-2@1x.webp 1x, images/advantages/advantage-2@2x.webp 2x" width="800" height="385" type="image/webp">
                 <source srcset="images/advantages/advantage-2@1x.jpg 1x, images/advantages/advantage-2@2x.jpg 2x" width="800" height="385" type="image/jpeg">
-                <img src="images/advantages/advantage-2@1x.jpg" width="800" height="385" alt="Каменный мост в виде песчаниковой арки в Седоне на фоне скалистых гор.">
+                <img src="images/advantages/advantage-2@1x.jpg" width="800" height="385" alt="Каменный мост в виде песчаниковой арки в Седоне на фоне скалистых гор">
               </picture>
             </li>
           </ul>
@@ -112,22 +108,16 @@
           </header>
           <ul class="infrastructure-list list">
             <li class="box">
-              <div class="box-wrap">
                 <h3 class="box-title">Жильё</h3>
                 <p class="box-description">Рекомендуем пожить в&nbsp;настоящем мотеле, всё&nbsp;как&nbsp;в кино!</p>
-              </div>
             </li>
             <li class="box">
-              <div class="box-wrap">
                 <h3 class="box-title">Еда</h3>
                 <p class="box-description">Всегда заказывайте топовый&nbsp;фирменный бургер, вы не разочаруетесь!</p>
-              </div>
             </li>
             <li class="box">
-              <div class="box-wrap">
                 <h3 class="box-title">Сувениры</h3>
                 <p class="box-description">Не только китайского, но&nbsp;и&nbsp;настоящего местного производства!</p>
-              </div>
             </li>
           </ul>
         </section>
@@ -170,7 +160,7 @@
         <a class="footer-contact-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
         <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" rel="noreferrer noopener">
           <!-- Переделать на тег svg? добавить в разметку атрибут role="img" и переместить описание изображения в атрибут aria-label -->
-          <img class="htmlacademy-logo" src="images/logo-html-academy.svg" width="115" height="33" alt="Логотип разработчика сайта HTML Academy.">
+          <img class="htmlacademy-logo" src="images/logo-html-academy.svg" width="115" height="33" alt="Логотип разработчика сайта HTML Academy">
         </a>
       </footer>
     </div>
