@@ -171,9 +171,18 @@ img {
   margin-top: 10px;
 }
 
-.box-wrap {
-  margin: 0 auto;
+.box:not(.box-with-image) {
   padding: 81px 85px;
+  flex-grow: 1;
+}
+
+.box-with-image {
+  display: flex;
+}
+
+.box-wrap {
+  padding: 102px 85px;
+  flex-basis: 33%;
 }
 
 .box-title {
@@ -188,6 +197,7 @@ img {
 
 .box-description {
   margin: 0;
+  flex-grow: 1;
   font-size: 18px;
   line-height: 21px;
   color: var(--text-second-color, #333333);
@@ -195,6 +205,10 @@ img {
 
 .box-description + .box-description {
   margin-top: 8px;
+}
+
+.box-image-left {
+  order: -1;
 }
 
 .box-text-on-bg  {
@@ -222,7 +236,7 @@ img {
   z-index: 2;
 }
 
-.logo-img {
+.logo-image {
   display: block;
 }
 
@@ -231,7 +245,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 710px;
+  min-width: 710px;
 }
 
 .nav-list {
@@ -335,7 +349,7 @@ img {
 .infrastructure-header {
   margin: 0 auto 90px;
   padding: 65px 70px 0;
-  width: 795px;
+  max-width: 795px;
 }
 
 .infrastructure-header {
@@ -350,16 +364,11 @@ img {
 }
 
 .advantages-list .box-title {
-  width: 175px;
+  max-width: 175px;
 }
 
 .advantages-list li,
 .infrastructure-list li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
   width: 400px;
   min-height: 385px;
 }
@@ -375,16 +384,10 @@ img {
 
 .advantages-list li:first-child,
 .advantages-list li:last-child  {
-  flex-direction: row;
+  display: flex;
   justify-content: space-between;
   width: 100%;
   background-color: var(--bg-second-color, #82b3d3);
-}
-
-.advantages-list .box-wrap {
-  padding-top: 102px;
-  padding-bottom: 102px;
-  flex-basis: 33%;
 }
 
 .infrastructure-list .box-title {
@@ -394,11 +397,6 @@ img {
 
 .advantages-list img {
   display: block;
-  flex-grow: 1;
-}
-
-.box-img-left {
-  order: -1;
 }
 
 /* Поиск гостиниц */
@@ -584,6 +582,7 @@ img {
   margin-bottom: 40px;
   display: flex;
   align-items: center;
+  column-gap: 70px;
 }
 
 .hotels-result {
@@ -613,7 +612,6 @@ img {
 }
 
 .display-cards {
-  margin-left: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
