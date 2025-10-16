@@ -131,6 +131,7 @@ img {
 
 .button {
   padding: 8px 50px;
+  display: inline-block;
   color: var(--text-on-bg-color);
   font-weight: 700;
   text-align: center;
@@ -268,6 +269,7 @@ img {
   justify-content: space-between;
   align-items: center;
   min-width: 710px;
+  max-width: 712px;
 }
 
 .nav-list {
@@ -282,6 +284,7 @@ img {
 
 .nav .nav-user {
   gap: 0;
+  flex-shrink: 1;
 }
 
 .nav-link {
