@@ -51,11 +51,13 @@
   --hover-button-bg-secondary-color: #68a2ca;
   --hover-button-bg-favorite-color: #6c9e42;
   --focus-outline-color: #68a2ca;
+  --focus-input-outline-color: #83b3d3;
   --focus-button-reset-outline-color: #83b3d3;
   --hover-icons-color: #68a2ca;  /* иконки соц сетей */
   --active-icons-rgba30-color: rgba(104, 162, 202, 0.3);
   --hover-breadcrumbs-rgba60-color: rgba(255, 255, 255, 0.6);
   --active-breadcrumbs-rgba30-color: rgba(255, 255, 255, 0.3);
+  --hover-input-color: #e6e6e6;
 }
 
 *,
@@ -256,6 +258,10 @@ img {
   margin-bottom: -5px;
   align-self: start;
   z-index: 2;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
 }
 
 .logo-image {
@@ -565,9 +571,19 @@ img {
   width: 452px;
   font-size: 18px;
   line-height: 24px;
-  background: var(--bg-ultralight-color);
+  background-color: var(--bg-ultralight-color);
   border: none;
   border-radius: 4px 0 0 4px;
+}
+
+.newsletter-email:hover {
+  background-color: var(--hover-input-color);
+}
+
+.newsletter-email:focus {
+  background-color: var(--hover-input-color);
+  outline: 3px solid var(--focus-input-outline-color);
+  outline-offset: -3px;
 }
 
 .newsletter-button {
@@ -639,7 +655,6 @@ img {
   font-size: 40px;
   line-height: 40px;
 }
-
 
 .footer-contact-phone:hover,
 .footer-contact-phone:focus {
@@ -721,13 +736,12 @@ img {
   position: relative;
 }
 
-.breadcrumbs-item:not(:last-child)::before {
+.breadcrumbs-item:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  display: block;
   width: 8px;
   height: 20px;
   background-image: url("../images/icons/arrow-white.svg");
@@ -758,8 +772,6 @@ img {
 .breadcrumbs-link-home:active::before {
   background-color: var(--hover-breadcrumbs-rgba30-color);
 }
-
-
 
 /* Форма фильтра гостиниц */
 .hotels-filter-form {
@@ -996,9 +1008,22 @@ img {
 .hotel-card-link-title {
   grid-row: 2 / 3;
 }
+
+.hotel-card-link-title:hover .card-title {
+  color: var(--hover-color);
+}
+
+.hotel-card-link-title:active .card-title {
+  color: var(--active-rgba30-color);
+}
+
 .hotel-card-link-image {
   font-size: 0;
   line-height: 0;
+}
+
+.hotel-card-link-image:hover {
+  opacity: 0.8;
 }
 
 .card-title,
