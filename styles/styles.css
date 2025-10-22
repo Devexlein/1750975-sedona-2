@@ -40,24 +40,27 @@
   --border-middle-color: #e6e6e6;
   --border-light-color: #e5e5e5;
 
+  --input-control-color: #3f5e72;
+
   --shadow-rgba20-basic:  rgba(0, 0, 0, 0.2);
   --shadow-rgba25-basic: rgba(0, 0, 0, 0.25);
+  --shadow-rgba40-basic: rgba(0, 0, 0, 0.40);
   --shadow-middle-color: #e6e6e6;
 
   --hover-decor-color: #756257;  /* черта в навигации */
-  --hover-color: #756157;  /* логотип Academy, телефон */
-  --active-rgba30-color: rgba(117, 97, 87, 0.3);
+  --hover-color: #756157;  /* логотип Academy, телефон, название гостиницы в карточке */
   --hover-button-bg-basic-color: #615048;
   --hover-button-bg-secondary-color: #68a2ca;
   --hover-button-bg-favorite-color: #6c9e42;
+  --hover-breadcrumbs-rgba60-color: rgba(255, 255, 255, 0.6);
+  --hover-input-color: #e6e6e6;
+  --hover-icons-color: #68a2ca;  /* иконки соц сетей */
   --focus-outline-color: #68a2ca;
   --focus-input-outline-color: #83b3d3;
   --focus-button-reset-outline-color: #83b3d3;
-  --hover-icons-color: #68a2ca;  /* иконки соц сетей */
+  --active-rgba30-color: rgba(117, 97, 87, 0.3); /* логотип Academy, телефон, название гостиницы в карточке */
   --active-icons-rgba30-color: rgba(104, 162, 202, 0.3);
-  --hover-breadcrumbs-rgba60-color: rgba(255, 255, 255, 0.6);
   --active-breadcrumbs-rgba30-color: rgba(255, 255, 255, 0.3);
-  --hover-input-color: #e6e6e6;
 }
 
 *,
@@ -142,6 +145,7 @@ img {
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .button:hover,
@@ -258,6 +262,7 @@ img {
   margin-bottom: -5px;
   align-self: start;
   z-index: 2;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .nav-logo:hover {
@@ -300,6 +305,7 @@ img {
   font-weight: 700;
   line-height: 24px;
   color: inherit;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover,
@@ -336,6 +342,7 @@ img {
   mask-repeat: no-repeat;
   mask-size: 20px 20px;
   mask-position: center;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .search-link:hover::before,
@@ -574,6 +581,7 @@ img {
   background-color: var(--bg-ultralight-color);
   border: none;
   border-radius: 4px 0 0 4px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .newsletter-email:hover {
@@ -627,6 +635,7 @@ img {
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: var(--width-social-link) 40px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .footer-social-link:hover::before,
@@ -654,6 +663,7 @@ img {
   color: inherit;
   font-size: 40px;
   line-height: 40px;
+  transition: color 0.3s ease-in-out;
 }
 
 .footer-contact-phone:hover,
@@ -681,6 +691,7 @@ img {
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: 115px 34px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .htmlacademy-link:hover::before,
@@ -751,6 +762,7 @@ img {
 
 .breadcrumbs-link:not([aria-current]) {
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .breadcrumbs-link-home::before {
@@ -763,6 +775,7 @@ img {
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: 13px 15px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .breadcrumbs-link-home:hover::before {
@@ -808,6 +821,76 @@ img {
   line-height: 23px;
 }
 
+.hotels-filter-control {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  transition: opacity 0.3s;
+}
+
+/* чекбоксы, радиокнопки */
+.hotels-filter-control-input {
+  appearance: none;
+  margin: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-primary-color);
+  border-radius: 4px;
+  transition: opacity 0.3s, outline 0.3s ease-in-out;
+}
+
+.hotels-filter-control-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.hotels-filter-control-input::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s, outline 0.3s ease-in-out;
+}
+
+.hotels-filter-control-input[type="radio"]::after {
+  background-color: var(--input-control-color);
+  border-radius: 50%;
+}
+
+.hotels-filter-control-input[type="checkbox"]::after {
+  background-image: url("../images/icons/checkbox-checked.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+
+.hotels-filter-control-input[type="checkbox"]:checked::after {
+  width: 20px;
+  height: 20px;
+}
+
+.hotels-filter-control-input[type="radio"]:checked::after {
+  width: 10px;
+  height: 10px;
+}
+
+.hotels-filter-control:hover {
+  opacity: 0.6;
+}
+
+.hotels-filter-control-input:focus {
+  outline: 3px solid var(--focus-input-outline-color);
+  outline-offset: 0;
+}
+
+.hotels-filter-control:active {
+  outline: none;
+  opacity: 0.3;
+}
+
 .hotels-filter-group-free {
   justify-self: end;
 }
@@ -841,6 +924,16 @@ img {
   font-weight: 700;
   color: var(--text-primary-color);
   border: none;
+  transition: background-color 0.3s, outline 0.3s ease-in-out;
+}
+
+.hotels-filter-range-input:hover {
+  background-color: var(--hover-input-color);
+}
+
+.hotels-filter-range-input:focus {
+  background-color: var(--hover-input-color);
+  outline: 3px solid var(--focus-input-outline-color);
 }
 
 .hotels-filter-range-input-from {
@@ -854,9 +947,27 @@ img {
 
 .hotels-filter-range-handle {
   margin: 0;
+  width: 20px;
   height: 20px;
+  appearance: none;
   accent-color: var(--bg-primary-color);
+  border-radius: 5px;
   cursor: pointer;
+  transition: box-shadow 0.3s, outline 0.3s ease-in-out;
+}
+
+.hotels-filter-range-handle:hover {
+  box-shadow: 0 4px 10px var(--shadow-rgba25-basic);
+}
+
+.hotels-filter-range-handle:focus {
+  box-shadow: 0 4px 10px var(--shadow-rgba25-basic);
+  outline: 3px solid var(--focus-input-outline-color);
+}
+
+.hotels-filter-range-handle:active {
+  box-shadow: 0 7px 15px var(--shadow-rgba40-basic);
+  outline: 2px solid var(--focus-input-outline-color);
 }
 
 /* Кнопки фильтра */
@@ -902,6 +1013,7 @@ img {
   background-color: var(--bg-primary-color);
   border: 2px solid var(--border-light-color);
   border-radius: 4px;
+  transition: border-color 0.3s;
 }
 
 .hotels-select {
@@ -1003,10 +1115,12 @@ img {
 
 .hotel-card-link {
   grid-column: 1 / -1;
+  transition: opacity 0.3s;
 }
 
 .hotel-card-link-title {
   grid-row: 2 / 3;
+  transition: color 0.3s;
 }
 
 .hotel-card-link-title:hover .card-title {
@@ -1128,6 +1242,7 @@ img {
   line-height: 36px;
   color: var(--text-on-bg-color);
   background-color: var(--button-bg-secondary);
+  transition: background-color 0.3s;
 }
 
 .pagination-more {
