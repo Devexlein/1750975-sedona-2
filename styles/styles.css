@@ -22,6 +22,7 @@
   --text-on-bg-rgba30-color: rgba(255, 255, 255, 0.3);
   --text-error-color: #ff5757;
 
+  --bg-basic-color: #000000;
   --bg-primary-color: #ffffff;
   --bg-primary-rgba30-color: rgba(255, 255, 255, 0.3);
   --bg-secondary-color: #82b3d3;
@@ -30,6 +31,7 @@
   --bg-duplicate-color: #bbd4ea;
   --bg-ultralight-color: #f2f2f2;
   --bg-transparent: transparent;
+  --bg-overlay-color: rgba(242, 242, 242, 0.8);
 
   --button-bg-basic: #756157;
   --button-bg-secondary: #82b3d3;
@@ -44,6 +46,7 @@
   --input-control-color: #3f5e72;
 
   --shadow-rgba20-basic:  rgba(0, 0, 0, 0.2);
+  --shadow-rgba15-basic:  rgba(0, 0, 0, 0.15);
   --shadow-rgba25-basic: rgba(0, 0, 0, 0.25);
   --shadow-rgba40-basic: rgba(0, 0, 0, 0.40);
   --shadow-middle-color: #e6e6e6;
@@ -770,6 +773,7 @@ img {
   align-items: center;
   color: inherit;
 }
+
 .breadcrumbs-link span {
   padding-left: 10px;
 }
@@ -842,6 +846,7 @@ img {
   display: flex;
   align-items: center;
   column-gap: 16px;
+  cursor: pointer;
   transition: opacity 0.3s;
 }
 
@@ -854,6 +859,7 @@ img {
   height: 20px;
   background-color: var(--bg-primary-color);
   border-radius: 4px;
+  cursor: pointer;
   transition: opacity 0.3s, outline 0.3s ease-in-out;
 }
 
@@ -937,12 +943,13 @@ img {
 .from,
 .to {
   position: absolute;
-  top: 10px;
-  right: 22px;
+  top: 50%;
+  right: 20px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
   color: var(--text-primary-rgba20-color);
+  transform: translateY(-50%);
 }
 
 .hotels-filter-input {
@@ -953,9 +960,11 @@ img {
   font-weight: 700;
   color: var(--text-primary-color);
   border: none;
+  appearance: textfield;    /* отключить стрелки в Firefox  */
   transition: background-color 0.3s, outline 0.3s ease-in-out;
 }
 
+/* отключить стрелки в других браузерах  */
 .hotels-filter-input::-webkit-outer-spin-button,
 .hotels-filter-input::-webkit-inner-spin-button {
   margin: 0;
@@ -1007,6 +1016,15 @@ img {
   transition: box-shadow 0.3s, outline 0.3s ease-in-out;
 }
 
+.hotels-filter-range-handle::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.hotels-filter-range-handle::-moz-range-thumb {
+  background-color: var(--bg-primary-color);
+  border: none;
+}
+
 .hotels-filter-range-handle-min {
   left: -10px;
 }
@@ -1024,8 +1042,7 @@ img {
   outline: 3px solid var(--focus-input-outline-color);
 }
 
-.hotels-filter-range-handle:active {
-  background-color: var(--bg-primary-color);
+.hotels-filter-range-bar .hotels-filter-range-handle:active {
   box-shadow: 0 7px 15px var(--shadow-rgba40-basic);
   outline: 2px solid var(--focus-input-outline-color);
 }
@@ -1041,7 +1058,7 @@ img {
 
 .hotels-filter-buttons .button-reset {
   margin: 0 auto;
-  display: block;
+  width: 100%;
 }
 
 /* Шапка каталога гостиниц с настройкой отображения */
@@ -1325,4 +1342,84 @@ img {
 
 .pagination-link:active {
   color: var(--text-on-bg-rgba30-color);
+}
+
+/* Модальное окно "Поиск гостиницы в Седоне" */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var( --bg-overlay-color);
+  z-index: 2;
+}
+
+.modal-container-close {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background: var(--bg-primary-color);
+  box-shadow: 0 25px 50px var( --shadow-rgba15-basic);
+  border-radius: 30px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  background-color: var(--bg-ultralight-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close-button::before,
+.modal-close-button::after {
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  background-color: var(--bg-basic-color);
+}
+
+.modal-close-button::before {
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.modal-close-button::after{
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal-content {
+  width: 577px;
+}
+
+.modal-title {
+  margin-bottom: 64px;
+  padding-right: 52px;
+}
+
+.search-form {
+  display: grid;
+}
+
+.message {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--text-secondary-color);
+}
+.error-message {
+  color: var(--text-error-color);
 }
