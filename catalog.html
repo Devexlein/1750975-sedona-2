@@ -113,20 +113,24 @@
             <fieldset class="hotels-filter-group-free hotels-filter-group">
               <legend class="hotels-filter-title">Стоимость, ₽:</legend>
               <div class="hotels-filter-price">
-                  <div class="input-wrap">
-                    <label class="from" for="min-price">от</label>
-                    <input class="hotels-filter-range-input-from hotels-filter-range-input" id="min-price" name="min-price" value="0">
+                <div class="input-wrap">
+                  <label class="from" for="min-price">от</label>
+                  <input class="hotels-filter-input-from hotels-filter-input" id="min-price" type="number" name="min-price" value="0">
+                </div>
+                <div class="input-wrap">
+                  <label class="to" for="max-price">до</label>
+                  <input class="hotels-filter-input-to hotels-filter-input" id="max-price" type="number" name="max-price" value="9000">
+                </div>
+                <div class="hotels-filter-range">
+                  <div class="hotels-filter-range-bar" style="left: 10px; width: 206px;">
+                    <!-- Первый ползунок -->
+                    <label class="visually-hidden" for="min-price-range">Выберите ползунком минимальную допустимую стоимость гостиницы</label>
+                    <input class="hotels-filter-range-handle-min hotels-filter-range-handle" id="min-price-range" type="range" min="0" value="0" step="10">
+                    <!-- Второй ползунок -->
+                    <label class="visually-hidden" for="max-price-range">Выберите ползунком максимальную допустимую стоимость гостиницы</label>
+                    <input class="hotels-filter-range-handle-max hotels-filter-range-handle" id="max-price-range" type="range" min="0" value="9000" step="10">
                   </div>
-                  <div class="input-wrap">
-                    <label class="to" for="max-price">до</label>
-                    <input class="hotels-filter-range-input-to hotels-filter-range-input" id="max-price" name="max-price" value="9000">
-                  </div>
-                <!-- Первый ползунок -->
-                <label class="visually-hidden" for="min-price-range">Выберите ползунком минимальную допустимую стоимость гостиницы</label>
-                <input class="hotels-filter-range-handle" id="min-price-range" type="range" min="0" value="0">
-                <!-- Второй ползунок -->
-                <label class="visually-hidden" for="max-price-range">Выберите ползунком максимальную допустимую стоимость гостиницы</label>
-                <input class="hotels-filter-range-handle" id="max-price-range" type="range" min="0" value="9000">
+                </div>
               </div>
             </fieldset>
 
