@@ -41,7 +41,7 @@
           </ul>
         </nav>
 
-        <a class="button-small button" href="#">Хочу сюда!</a>
+        <a class="button" href="#">Хочу сюда!</a>
       </header>
       <!-- Основной контент -->
       <main class="main-index" data-test="main">
@@ -131,7 +131,7 @@
           <p class="section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
             <label class="visually-hidden" for="newsletter-email">Укажите ваш email</label>
-            <input class="newsletter-email" id="newsletter-email" type="email" name="newsletter-email" placeholder="Ваш e-mail" required>
+            <input class="newsletter-email field-input" id="newsletter-email" type="email" name="newsletter-email" placeholder="Ваш e-mail" required>
             <button class="newsletter-button button-secondary button-big button" type="submit">Подписаться</button>
           </form>
         </section>
@@ -162,6 +162,36 @@
           <span class="visually-hidden">Перейти на сайт HTML Academy</span>
         </a>
       </footer>
+    </div>
+
+    <!-- Модальное окно "Поиск гостиницы в Седоне" -->
+    <div class="modal-container modal-container-close">
+      <div class="modal">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть модальное окно</span>
+        </button>
+        <section class="modal-content">
+
+          <h2 class="modal-title section-title">Поиск гостиницы в Седоне</h2>
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
+            <label class="hotels-search-label" for="start-date">Дата заезда:
+              <input class="hotels-search-input-start-date hotels-search-input field-input" id="start-date" type="date" name="start date" value="" required>
+            </label>
+            <span class="error-message message">Мы не можем отправить вас в прошлое.</span>
+            <label class="hotels-search-label" for="exit-date">Дата выезда:
+              <input class="hotels-search-input field-input" id="exit-date" type="date" name="exit date" value="" required>
+            </label>
+            <span class="successful-message message">На эти даты есть свободные номера. Пока есть.</span>
+            <label class="hotels-search-label" for="adults">Взрослые:
+              <input class="hotels-search-input field-input" id="adults" type="number" name="adults" required>
+            </label>
+            <label class="hotels-search-label" for="children">Дети:
+              <input class="hotels-search-input field-input" id="children" type="number" name="children" required>
+            </label>
+            <button class="hotels-search-button button-secondary button-big button" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
     </div>
   </body>
 </html>

@@ -42,7 +42,7 @@
           </ul>
         </nav>
 
-        <a class="button-small button" href="#">Хочу сюда!</a>
+        <a class="button" href="#">Хочу сюда!</a>
       </header>
       <!-- Основной контент страницы каталога -->
       <main class="main-inner" data-test="main">
@@ -51,6 +51,7 @@
             <h1 class="inner-header-title">Гостиницы Седоны</h1>
             <!-- Хлебные крошки -->
             <ol class="breadcrumbs list-reset">
+              <!-- При добавлении пункта с иконкой и видимым текстом, последний оборачиваем в span -->
               <li class="breadcrumbs-item">
                 <a class="breadcrumbs-link-home breadcrumbs-link" href="index.html">
                   <span class="visually-hidden">Перейти на главную страницу</span>
@@ -115,11 +116,11 @@
               <div class="hotels-filter-price">
                 <div class="input-wrap">
                   <label class="from" for="min-price">от</label>
-                  <input class="hotels-filter-input-from hotels-filter-input" id="min-price" type="number" name="min-price" value="0">
+                  <input class="hotels-filter-price-from field-input" id="min-price" type="number" name="min-price" value="0">
                 </div>
                 <div class="input-wrap">
                   <label class="to" for="max-price">до</label>
-                  <input class="hotels-filter-input-to hotels-filter-input" id="max-price" type="number" name="max-price" value="9000">
+                  <input class="hotels-filter-price-to field-input" id="max-price" type="number" name="max-price" value="9000">
                 </div>
                 <div class="hotels-filter-range">
                   <div class="hotels-filter-range-bar" style="left: 10px; width: 206px;">
@@ -135,8 +136,8 @@
             </fieldset>
 
             <div class="hotels-filter-buttons">
-              <button class="button-secondary button-small button" type="submit">Применить</button>
-              <button class="button-reset button-small button" type="reset">Сбросить</button>
+              <button class="button-secondary button" type="submit">Применить</button>
+              <button class="button-reset button" type="reset">Сбросить</button>
             </div>
           </form>
         </section>
@@ -184,9 +185,9 @@
               </a>
               <p class="hotel-card-type">Гостиница</p>
               <p class="hotel-card-price"><b>От 4000 ₽</b></p>
-              <a class="button-small button" href="#">Подробнее</a>
-              <button class="button-secondary button-small button" type="button">В избранное</button>
-              <p class="four-stars stars" role="img">
+              <a class="button" href="#">Подробнее</a>
+              <button class="button-secondary button" type="button">В избранное</button>
+              <p class="four-stars rating" role="img">
                 <span class="visually-hidden">Отель 4 звезды</span>
               </p>
               <p class="rating-result">Рейтинг: <span>8,5</span></p>
@@ -205,9 +206,9 @@
               </a>
               <p  class="hotel-card-type">Гостиница</p>
               <p class="hotel-card-price"><b>От 5000 ₽</b></p>
-              <a class="button-small button" href="#">Подробнее</a>
-              <button class="button-favorite button-small button" type="button">В избранном</button>
-              <p class="four-stars stars" role="img">
+              <a class="button" href="#">Подробнее</a>
+              <button class="button-favorite button" type="button">В избранном</button>
+              <p class="four-stars rating" role="img">
                 <span class="visually-hidden">Отель 4 звезды</span>
               </p>
               <p class="rating-result">Рейтинг: <span>9,2</span></p>
@@ -226,9 +227,9 @@
               </a>
               <p  class="hotel-card-type">Гостиница</p>
               <p  class="hotel-card-price"><b>От 2500 ₽</b></p>
-              <a class="button-small button" href="#">Подробнее</a>
-              <button class="button-secondary button-small button" type="button">В избранное</button>
-              <p class="three-stars stars" role="img">
+              <a class="button" href="#">Подробнее</a>
+              <button class="button-secondary button" type="button">В избранное</button>
+              <p class="three-stars rating" role="img">
                 <span class="visually-hidden">Отель 3 звезды</span>
               </p>
               <p class="rating-result">Рейтинг: <span>6,9</span></p>
@@ -247,9 +248,9 @@
               </a>
               <p class="hotel-card-type">Гостиница</p>
               <p class="hotel-card-price"><b>От 1500 ₽</b></p>
-              <a class="button-small button" href="#">Подробнее</a>
-              <button class="button-secondary button-small button" type="button">В избранное</button>
-              <p class="two-stars stars" role="img">
+              <a class="button" href="#">Подробнее</a>
+              <button class="button-secondary button" type="button">В избранное</button>
+              <p class="two-stars rating" role="img">
                 <span class="visually-hidden">Отель 2 звезды</span>
               </p>
               <p class="rating-result">Рейтинг: <span>5,0</span></p>
@@ -258,7 +259,7 @@
           <!-- Пагинация -->
           <ol class="pagination list-reset">
             <li class="pagination-item">
-              <a class="pagination-link pagination-current" href="#" aria-current="page">1</a>
+              <a class="pagination-link pagination-current" aria-current="page">1</a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">2</a>
@@ -283,7 +284,7 @@
           <p class="section-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
             <label class="visually-hidden" for="newsletter-email">Укажите ваш email</label>
-            <input class="newsletter-email" id="newsletter-email" type="email" name="newsletter-email" placeholder="Ваш e-mail" required>
+            <input class="newsletter-email field-input" id="newsletter-email" type="email" name="newsletter-email" placeholder="Ваш e-mail" required>
             <button class="newsletter-button button-secondary button-big button" type="submit">Подписаться</button>
           </form>
         </section>
