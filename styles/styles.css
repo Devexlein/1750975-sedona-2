@@ -1326,7 +1326,7 @@ img {
 }
 
 .modal-container-close {
-  display: none;
+  /* display: none; */
 }
 
 .modal {
@@ -1499,7 +1499,7 @@ img {
 .increase:focus,
 .increase:focus {
   outline: 3px solid var(--focus-input-outline-color);
-  outline-offset: -3px;
+  outline-offset: 0;
 }
 
 .decrease:active,
@@ -1515,7 +1515,7 @@ img {
 }
 
 .hotels-search-input-count {
-  justify-items: center;
+  text-align: center;
   width: 100%;
   appearance: textfield;    /* отключить стрелки в Firefox  */
 }
