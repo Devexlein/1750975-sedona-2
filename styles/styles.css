@@ -32,6 +32,8 @@
   --bg-ultralight-color: #f2f2f2;
   --bg-transparent: transparent;
   --bg-overlay-color: rgba(242, 242, 242, 0.8);
+  --bg-tooltip-color: #333333;
+  --bg-tooltip-icon-color: #83b3d3;
 
   --button-bg-basic: #756157;
   --button-bg-secondary: #82b3d3;
@@ -44,10 +46,12 @@
   --border-light-color: #e5e5e5;
 
   --input-control-color: #3f5e72;
+  --input-count-color: rgba(117, 97, 87, 0.3);
 
   --shadow-rgba20-basic:  rgba(0, 0, 0, 0.2);
   --shadow-rgba15-basic:  rgba(0, 0, 0, 0.15);
   --shadow-rgba25-basic: rgba(0, 0, 0, 0.25);
+  --shadow-rgba30-basic: rgba(0, 0, 0, 0.3);
   --shadow-rgba40-basic: rgba(0, 0, 0, 0.40);
   --shadow-middle-color: #e6e6e6;
 
@@ -63,6 +67,7 @@
   --focus-input-outline-color: #83b3d3;
   --focus-button-reset-outline-color: #83b3d3;
   --active-rgba30-color: rgba(117, 97, 87, 0.3); /* логотип Academy, телефон, название гостиницы в карточке */
+  --active-bg-basic-rgba30-color: rgba(0, 0, 0, 0.3);
   --active-icons-rgba30-color: rgba(104, 162, 202, 0.3);
   --active-breadcrumbs-rgba30-color: rgba(255, 255, 255, 0.3);
 }
@@ -1337,6 +1342,7 @@ img {
   position: absolute;
   top: 64px;
   right: 52px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1351,19 +1357,32 @@ img {
 .modal-close-button::before,
 .modal-close-button::after {
   content: "";
-  top: 50%;
-  left: 50%;
   width: 18px;
   height: 2px;
   background-color: var(--bg-basic-color);
 }
 
 .modal-close-button::before {
-  transform: translate(50%, -50%) rotate(45deg);
+  transform: translateX(50%) rotate(45deg);
 }
 
-.modal-close-button::after{
-  transform: translate(-50%, -50%) rotate(-45deg);
+.modal-close-button::after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.modal-close-button:hover {
+  background-color: var(--hover-input-color);
+}
+
+.modal-close-button:focus {
+  background-color: var(--hover-input-color);
+  outline: 3px solid var(--focus-input-outline-color);
+}
+
+.modal-close-button:active {
+  outline: none;
+  background-color: var(--active-bg-basic-rgba30-color);
+  opacity: 0.3;
 }
 
 .modal-content {
@@ -1377,22 +1396,203 @@ img {
 
 .search-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px 88px;
+  grid-template-columns: 121px 110px 1fr 132px 110px;
+  grid-template-rows: repeat(6, minmax(48px, auto));
+  column-gap: 16px;
+  align-items: center;
+}
+
+.hotels-search-label {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.hotels-search-input-date {
+  grid-column-start: 2;
+  grid-column-end: -1;
+  background-image: url("../images/icons/calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 15px;
+  background-position: 95% 50%;
 }
 
 .message {
+  padding-top: 4px;
+  padding-left: 20px;
+  grid-column-start: 2;
+  grid-column-end: -1;
+  align-self: start;
   font-size: 16px;
   line-height: 21px;
   color: var(--text-secondary-color);
+  opacity: 0;
 }
 
 .error-message {
   color: var(--text-error-color);
 }
 
+.valid-message,
+.invalid-message {
+  opacity: 1;
+}
+
+.adults-input {
+  position: relative;
+}
+
+.children-input {
+  position: relative;
+}
+
+.decrease,
+.increase {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 14px 10px;
+  width: 30px;
+  height: calc(100% - 6px);
+  border: none;
+  background-color: var(--bg-ultralight-color);
+}
+.decrease {
+  left: 3px;
+}
+
+.increase {
+  right: 3px;
+}
+
+.decrease::before,
+.increase::before,
+.increase::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  display: block;
+  width: 14px;
+  height: 2px;
+  background-color: var(--input-count-color);
+  transition: background-color 0.3s;
+}
+
+.increase::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.decrease:hover::before,
+.increase:hover::before,
+.increase:hover::after,
+.decrease:focus::before,
+.increase:focus::before,
+.increase:focus::after  {
+  background-color: var(--bg-basic-color);
+}
+
+.decrease:focus,
+.increase:focus,
+.increase:focus {
+  outline: 3px solid var(--focus-input-outline-color);
+  outline-offset: -3px;
+}
+
+.decrease:active,
+.increase:active,
+.increase:active {
+  outline: none;
+}
+
+.decrease:active::before,
+.increase:active::before,
+.increase:active::after {
+  background-color: var(--input-count-color);
+}
+
+.hotels-search-input-count {
+  justify-items: center;
+  width: 100%;
+  appearance: textfield;    /* отключить стрелки в Firefox  */
+}
+
+/* отключить стрелки в других браузерах  */
+.hotels-search-input-count::-webkit-outer-spin-button,
+.hotels-search-input-count::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.hotels-search-label-tooltip {
+  display: flex;
+  align-items: center;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.tooltip {
+  position: relative;
+  margin-left: 10px;
+}
+
+.tooltip-toggle {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: var(--bg-tooltip-icon-color);
+  background-image: url("../images/icons/tooltip-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border: none;
+  border-radius: 50%;
+}
+
+.tooltip-text {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 18px 18px 22px;
+  width: 256px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--text-on-bg-color);
+  background-color: var(--bg-tooltip-color);
+  box-shadow: 0 15px 30px var(--shadow-rgba30-basic);
+  border-radius: 10px;
+  z-index: 1;
+  display: none;
+}
+
+.tooltip-text::before {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid var(--bg-tooltip-color);
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
 .hotels-search-button {
   padding: 18px;
-  grid-column: span 2;
+  grid-column: span 5;
+  grid-row-start: 7;
   line-height: 24px;
 }
