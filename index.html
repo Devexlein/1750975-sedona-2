@@ -174,20 +174,32 @@
 
           <h2 class="modal-title section-title">Поиск гостиницы в Седоне</h2>
           <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
-            <label class="hotels-search-label" for="start-date">Дата заезда:
-              <input class="hotels-search-input-start-date hotels-search-input field-input" id="start-date" type="date" name="start date" value="" required>
-            </label>
+            <label class="hotels-search-label" for="start-date">Дата заезда:</label>
+            <input class="hotels-search-input-date field-input" id="start-date" type="text" name="start date" value="" placeholder="Укажите дату" required>
+            <!-- Добавить класс "invalid-message" для отображения сообщения об ошибке -->
             <span class="error-message message">Мы не можем отправить вас в прошлое.</span>
-            <label class="hotels-search-label" for="exit-date">Дата выезда:
-              <input class="hotels-search-input field-input" id="exit-date" type="date" name="exit date" value="" required>
-            </label>
-            <span class="successful-message message">На эти даты есть свободные номера. Пока есть.</span>
-            <label class="hotels-search-label" for="adults">Взрослые:
-              <input class="hotels-search-input field-input" id="adults" type="number" name="adults" required>
-            </label>
-            <label class="hotels-search-label" for="children">Дети:
-              <input class="hotels-search-input field-input" id="children" type="number" name="children" required>
-            </label>
+            <label class="hotels-search-label" for="exit-date">Дата выезда:</label>
+            <input class="hotels-search-input-date field-input" id="exit-date" type="text" name="exit date" value="" placeholder="Укажите дату" required>
+            <!-- Добавить класс "valid-message" для отображения сообщения об успешной валидации -->
+            <span class="message">На эти даты есть свободные номера. Пока есть.</span>
+            <label class="hotels-search-label-adults hotels-search-label" for="adults">Взрослые:</label>
+            <div class="adults-input">
+              <input class="hotels-search-input-count field-input" id="adults" type="number" name="adults" value="2" required>
+              <button class="decrease" type="button"></button>
+              <button class="increase" type="button"></button>
+            </div>
+            <div class="hotels-search-label-tooltip">
+              <label class="hotels-search-label-children hotels-search-label" for="children">Дети:</label>
+              <div class="tooltip">
+                <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-children"></button>
+                <span class="tooltip-text" role="tooltip" id="tooltip-label-children">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+              </div>
+            </div>
+            <div class="children-input">
+              <input class="hotels-search-input-count field-input" id="children" type="number" name="children" value="2" required>
+              <button class="decrease" type="button"></button>
+              <button class="increase" type="button"></button>
+            </div>
             <button class="hotels-search-button button-secondary button-big button" type="submit">Найти</button>
           </form>
         </section>
