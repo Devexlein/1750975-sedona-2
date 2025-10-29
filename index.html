@@ -169,20 +169,24 @@
       <div class="modal">
         <section class="modal-content">
           <h2 class="modal-title section-title">Поиск гостиницы в Седоне</h2>
-          <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="hotels-search-label" for="start-date">Дата заезда:</label>
-            <input class="hotels-search-input-date field-input" id="start-date" type="text" name="start date" value="" placeholder="Укажите дату" required>
-            <!-- Добавить класс "invalid-message" для отображения сообщения об ошибке -->
-            <span class="error-message message">Мы не можем отправить вас в прошлое.</span>
+            <input class="hotels-search-input-date field-input" id="start-date" type="text" name="start date" value="27 апреля 2020" placeholder="Укажите дату" required>
+            <!-- Класс "invalid-message" отображает сообщение об ошибке -->
+            <span class="invalid-message error-message message">Мы не можем отправить вас в прошлое.</span>
             <label class="hotels-search-label" for="exit-date">Дата выезда:</label>
-            <input class="hotels-search-input-date field-input" id="exit-date" type="text" name="exit date" value="" placeholder="Укажите дату" required>
-            <!-- Добавить класс "valid-message" для отображения сообщения об успешной валидации -->
-            <span class="message">На эти даты есть свободные номера. Пока есть.</span>
+            <input class="hotels-search-input-date field-input" id="exit-date" type="text" name="exit date" value="01 сентября 2023" placeholder="Укажите дату" required>
+            <!-- Класс "valid-message" отображает сообщение об успешной валидации -->
+            <span class="valid-message message">На эти даты есть свободные номера. Пока есть.</span>
             <label class="hotels-search-label-adults hotels-search-label" for="adults">Взрослые:</label>
             <div class="adults-input">
-              <input class="hotels-search-input-count field-input" id="adults" type="number" name="adults" value="2" required>
-              <button class="decrease" type="button"></button>
-              <button class="increase" type="button"></button>
+              <button class="decrease" type="button">
+                <span class="visually-hidden">Уменьшить количество на 1</span>
+              </button>
+              <input class="hotels-search-input-count field-input" id="adults" type="number" name="adults" value="2" min="1" placeholder="1" required>
+              <button class="increase" type="button">
+                <span class="visually-hidden">Увеличить количество на 1</span>
+              </button>
             </div>
             <div class="hotels-search-label-tooltip">
               <label class="hotels-search-label-children hotels-search-label" for="children">Дети:</label>
@@ -192,9 +196,13 @@
               </div>
             </div>
             <div class="children-input">
-              <input class="hotels-search-input-count field-input" id="children" type="number" name="children" value="2" required>
-              <button class="decrease" type="button"></button>
-              <button class="increase" type="button"></button>
+              <button class="decrease" type="button">
+                <span class="visually-hidden">Уменьшить количество на 1</span>
+              </button>
+              <input class="hotels-search-input-count field-input" id="children" type="number" name="children" value="2"  min="0" placeholder="0">
+              <button class="increase" type="button">
+                <span class="visually-hidden">Увеличить количество на 1</span>
+              </button>
             </div>
             <button class="hotels-search-button button-secondary button-big button" type="submit">Найти</button>
           </form>
