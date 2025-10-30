@@ -947,7 +947,7 @@ img {
 .hotels-filter-price {
   display: grid;
   grid-template-columns: 144px 144px;
-  row-gap: 36px;
+  row-gap: 42px;
 }
 
 .input-wrap {
@@ -999,7 +999,6 @@ img {
 /* ползунки */
 .hotels-filter-range {
   position: relative;
-  padding: 8px 0;
   width: 288px;
   height: 4px;
   background-color: var( --bg-primary-rgba30-color);
