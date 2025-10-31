@@ -93,7 +93,9 @@ body {
   font-style: normal;
   line-height: 26px;
   color: var(--text-primary-color);
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   background-color: var(--bg-ultralight-color);
 }
 
@@ -261,7 +263,6 @@ img {
 /* Общие стили для полей ввода */
 .field-input {
   padding: 16px 20px 13px;
-  /* padding: 14px 20px; */
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;
@@ -375,9 +376,12 @@ img {
   width: 20px;
   height: 20px;
   background-color: var(--text-primary-color);
-  mask-repeat: no-repeat;
-  mask-size: 20px 20px;
-  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 20px 20px;
+          mask-size: 20px 20px;
+  -webkit-mask-position: center;
+          mask-position: center;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -389,11 +393,13 @@ img {
 }
 
 .search-link::before {
-  mask-image: url("../images/icons/search.svg");
+  -webkit-mask-image: url("../images/icons/search.svg");
+          mask-image: url("../images/icons/search.svg");
 }
 
 .heart-link::before {
-  mask-image: url("../images/icons/heart.svg");
+  -webkit-mask-image: url("../images/icons/heart.svg");
+          mask-image: url("../images/icons/heart.svg");
 }
 
 .heart-link {
@@ -433,6 +439,15 @@ img {
 
 .welcome-section {
   padding: 50px 70px 77px;
+  background-image: url("../images/backgrounds/welcome-bg-bottom.svg"),
+  -webkit-image-set(
+    url("../images/backgrounds/welcome-bg@2x.avif") type("image/avif") 2x,
+    url("../images/backgrounds/welcome-bg@1x.avif") type("image/avif") 1x,
+    url("../images/backgrounds/welcome-bg@2x.webp") type("image/webp") 2x,
+    url("../images/backgrounds/welcome-bg@1x.webp") type("image/webp") 1x,
+    url("../images/backgrounds/welcome-bg@2x.jpg") type("image/jpg") 2x,
+    url("../images/backgrounds/welcome-bg@1x.jpg") type("image/jpg") 1x
+  );
 
   background-image: url("../images/backgrounds/welcome-bg-bottom.svg"),
   image-set(
@@ -598,6 +613,11 @@ img {
 }
 
 .newsletter-main-index {
+  background-image: -webkit-image-set(
+    url("../images/backgrounds/newsletter-bg.avif") type("image/avif"),
+    url("../images/backgrounds/newsletter-bg.webp") type("image/webp"),
+    url("../images/backgrounds/newsletter-bg.jpg") type("image/jpg")
+  );
   background-image: image-set(
     url("../images/backgrounds/newsletter-bg.avif") type("image/avif"),
     url("../images/backgrounds/newsletter-bg.webp") type("image/webp"),
@@ -666,9 +686,12 @@ img {
   width: var(--width-social-link);
   height: 40px;
   background-color: var(--bg-secondary-color);
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: var(--width-social-link) 40px;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: var(--width-social-link) 40px;
+          mask-size: var(--width-social-link) 40px;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -682,15 +705,18 @@ img {
 }
 
 .vkontakte::before {
-  mask-image: url("../images/icons/social-vk.svg");
+  -webkit-mask-image: url("../images/icons/social-vk.svg");
+          mask-image: url("../images/icons/social-vk.svg");
 }
 
 .telegram::before {
-  mask-image: url("../images/icons/social-telegram.svg");
+  -webkit-mask-image: url("../images/icons/social-telegram.svg");
+          mask-image: url("../images/icons/social-telegram.svg");
 }
 
 .youtube::before {
-  mask-image: url("../images/icons/social-youtube.svg");
+  -webkit-mask-image: url("../images/icons/social-youtube.svg");
+          mask-image: url("../images/icons/social-youtube.svg");
 }
 
 .footer-contact-phone {
@@ -721,10 +747,14 @@ img {
   width: 115px;
   height: 35px;
   background-color: var(--text-primary-color);
-  mask-image: url("../images/logo-html-academy.svg");
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: 115px 35px;
+  -webkit-mask-image: url("../images/logo-html-academy.svg");
+          mask-image: url("../images/logo-html-academy.svg");
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 115px 35px;
+          mask-size: 115px 35px;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -746,6 +776,11 @@ img {
 /* Шапка фильтра гостиниц */
 .hotels-filter {
   padding: 34px 70px 70px;
+  background-image: -webkit-image-set(
+    url("../images/backgrounds/hotels-filter-form-bg.avif") type("image/avif"),
+    url("../images/backgrounds/hotels-filter-form-bg.webp") type("image/webp"),
+    url("../images/backgrounds/hotels-filter-form-bg.jpg") type("image/jpg")
+  );
   background-image: image-set(
     url("../images/backgrounds/hotels-filter-form-bg.avif") type("image/avif"),
     url("../images/backgrounds/hotels-filter-form-bg.webp") type("image/webp"),
@@ -810,10 +845,14 @@ img {
   width: 13px;
   height: 20px;
   background-color: var(--bg-primary-color);
-  mask-image: url("../images/icons/breadcrumbs-home.svg");
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: 13px 20px;
+  -webkit-mask-image: url("../images/icons/breadcrumbs-home.svg");
+          mask-image: url("../images/icons/breadcrumbs-home.svg");
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 13px 20px;
+          mask-size: 13px 20px;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -880,8 +919,9 @@ img {
 /* чекбоксы, радиокнопки */
 .hotels-filter-control-input {
   position: relative;
-  order: -1;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   margin: 0;
   flex-shrink: 0;
   width: 20px;
@@ -963,6 +1003,7 @@ img {
   line-height: 24px;
   font-weight: 400;
   color: var(--text-primary-rgba20-color);
+  text-transform: none;
   transform: translateY(-50%);
 }
 
@@ -970,7 +1011,9 @@ img {
 .hotels-filter-price-to  {
   padding: 12px 20px 11px;
   width: 143px;
-  appearance: textfield;    /* отключить стрелки в Firefox  */
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;    /* отключить стрелки в Firefox  */
 }
 
 .hotels-filter-price-from {
@@ -988,7 +1031,8 @@ img {
 .hotels-filter-price-to::-webkit-outer-spin-button,
 .hotels-filter-price-to::-webkit-inner-spin-button {
   margin: 0;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 }
 
 .hotels-filter-price-from:focus-visible,
@@ -1015,7 +1059,9 @@ img {
   position: absolute;
   top: -8px;
   margin: 0;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 20px;
   height: 20px;
   accent-color: var(--bg-primary-color);
@@ -1099,13 +1145,15 @@ img {
 .hotels-select {
   padding: 13px 42px 12px 18px;
   flex-shrink: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 292px;
   color: var(--text-secondary-color);
   background-image: url("../images/icons/arrow.svg");
   background-repeat: no-repeat;
   background-size: 12px auto;
   background-position: right 18px center;
-  appearance: none;
   cursor: pointer;
 }
 
@@ -1232,7 +1280,9 @@ img {
   font-size: 24px;
   line-height: 28px;
   color: var(--text-primary-color);
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .hotel-card-type,
@@ -1439,8 +1489,11 @@ img {
   line-height: 24px;
   font-weight: 700;
   text-transform: capitalize;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
+
 .search-form .field-input {
   padding: 12px 20px;
 }
@@ -1488,14 +1541,17 @@ img {
   padding: 14px 40px;
   width: 100%;
   text-align: center;
-  appearance: textfield;    /* отключить стрелки в Firefox  */
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;    /* отключить стрелки в Firefox  */
 }
 
 /* отключить стрелки в других браузерах  */
 .hotels-search-input-count::-webkit-outer-spin-button,
 .hotels-search-input-count::-webkit-inner-spin-button {
   margin: 0;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
 }
 
 .decrease,
@@ -1523,11 +1579,13 @@ img {
 }
 
 .decrease::before {
-  mask-image: url("../images/icons/decrease-icon.svg");
+  -webkit-mask-image: url("../images/icons/decrease-icon.svg");
+          mask-image: url("../images/icons/decrease-icon.svg");
 }
 
 .increase::before {
-  mask-image: url("../images/icons/increase-icon.svg");
+  -webkit-mask-image: url("../images/icons/increase-icon.svg");
+          mask-image: url("../images/icons/increase-icon.svg");
 }
 
 .decrease::before,
@@ -1536,9 +1594,12 @@ img {
   position: absolute;
   inset: -14px -10px;
   background-color: var(--input-count-color);
-  mask-repeat: no-repeat;
-  mask-size: 14px 14px;
-  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 14px 14px;
+          mask-size: 14px 14px;
+  -webkit-mask-position: center;
+          mask-position: center;
 }
 
 .decrease:hover::before,
@@ -1599,6 +1660,9 @@ img {
   transform: translateX(-50%);
   padding: 22px;
   padding-right: 18px;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
   width: 256px;
   font-size: 16px;
   line-height: 20px;
@@ -1608,7 +1672,6 @@ img {
   background-color: var(--bg-tooltip-color);
   box-shadow: 0 15px 30px var(--shadow-rgba30-basic);
   border-radius: 10px;
-  hyphens: none;
 }
 
 .tooltip-text::before {
