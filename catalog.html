@@ -133,7 +133,7 @@
           <div class="hotels-header">
             <h2 class="visually-hidden">Результат поиска гостиниц</h2>
             <p class="hotels-result section-title">Найдено гостиниц:<span>38</span></p>
-            <select class="hotels-select" aria-label="Сортировка">
+            <select class="hotels-select" aria-label="Сортировка" name="hotels-card-select">
               <option value="popular">Сначала популярные</option>
               <option value="cheap" selected>Сначала дешевые</option>
               <option value="expensive">Сначала дорогие</option>
@@ -157,6 +157,7 @@
             </ul>
           </div>
           <!-- Каталог гостиниц, отобранных по фильтрам -->
+          <!-- Класс disabled-link делает ссылки, внешне похожие на кнопки, аналогичными кнопкам с атрибутом disabled -->
           <ul class="hotels-list list-reset">
             <li class="hotel-card">
               <a class="hotel-card-link-title hotel-card-link" href="#" tabindex="-1">
@@ -299,7 +300,7 @@
           <span class="visually-hidden">Позвоните по номеру:</span>+7 (812) 812-12-12
         </a>
         <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" rel="noreferrer noopener">
-          <span class="visually-hidden">Перейти на сайт HTML Academy</span>
+          <span class="visually-hidden">Перейти на сайт HTML Academy - разработчика сайта</span>
         </a>
       </footer>
     </div>
