@@ -60,13 +60,15 @@
   --input-control-color: #3f5e72;
   --input-count-color: rgba(117, 97, 87, 0.3);
   --hover-input-color: #e6e6e6;
+  --disabled-input-bg-color: #bebebe;
+  --disabled-input-text-color: #a4a4a4;
 
   --focus-outline-color: #68a2ca;
   --focus-button-reset-outline-color: #83b3d3;
   --focus-input-outline-color: #83b3d3;
 
-  --shadow-rgba20-basic:  rgba(0, 0, 0, 0.2);
-  --shadow-rgba15-basic:  rgba(0, 0, 0, 0.15);
+  --shadow-rgba20-basic: rgba(0, 0, 0, 0.2);
+  --shadow-rgba15-basic: rgba(0, 0, 0, 0.15);
   --shadow-rgba25-basic: rgba(0, 0, 0, 0.25);
   --shadow-rgba30-basic: rgba(0, 0, 0, 0.3);
   --shadow-rgba40-basic: rgba(0, 0, 0, 0.40);
@@ -161,7 +163,7 @@ img {
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
 }
 
 .button:hover,
@@ -173,9 +175,14 @@ img {
   color: var(--text-on-bg-rgba30-color);
 }
 
+/* Состояние disabled для кнопок и ссылок, внешне похожих на кнопки  */
+/* Ссылке добавить класс disabled-link */
 .button:disabled,
-.button:disabled:hover {
+.button:disabled:hover,
+.disabled-link,
+.disabled-link:hover {
   background-color: var(--button-bg-disabled);
+  pointer-events: none;
 }
 
 .button-big {
@@ -282,6 +289,14 @@ img {
   background-color: var(--hover-input-color);
   outline: 3px solid var(--focus-input-outline-color);
   outline-offset: -3px;
+}
+
+.field-input:disabled,
+.field-input:disabled:hover,
+.field-input:disabled::placeholder {
+  background-color: var(--disabled-input-bg-color);
+  color: var(--disabled-input-text-color);
+  pointer-events: none;
 }
 
 /* Шапка */
@@ -739,6 +754,7 @@ img {
   flex-shrink: 0;
   min-width: 115px;
   min-height: 35px;
+  color: inherit;
 }
 
 .htmlacademy-link::before {
@@ -1101,6 +1117,13 @@ img {
   outline: 2px solid var(--focus-input-outline-color);
 }
 
+.hotels-filter-range-handle:disabled,
+.hotels-filter-range-handle:disabled:hover {
+  background-color: var(--disabled-input-bg-color);
+  color: var(--disabled-input-text-color);
+  pointer-events: none;
+}
+
 /* Кнопки фильтра */
 .hotels-filter-buttons {
   padding-top: 56px;
@@ -1406,7 +1429,8 @@ img {
   background-color: var( --bg-overlay-color);
 }
 
-.modal-container-close {
+/* Закрыть модальное окно */
+.modal-container.close-modal {
   display: none;
 }
 
