@@ -299,6 +299,11 @@ img {
   pointer-events: none;
 }
 
+.field-input:disabled + .button {
+  background-color: var(--button-bg-disabled);
+  pointer-events: none;
+}
+
 /* Шапка */
 .page-header {
   padding: 0 70px;
@@ -329,7 +334,7 @@ img {
   margin-right: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   min-width: 710px;
   max-width: 710px;
 }
@@ -597,7 +602,7 @@ img {
   background-color: var(--bg-secondary-rgba20-color);
 }
 
-.advantages-list .box:nth-child(even),
+.advantages-list .box:not(.box-with-image):nth-child(even),
 .infrastructure-list .box:nth-child(odd) {
   background-color: var(--bg-secondary-rgba12-color);
 }
@@ -987,8 +992,7 @@ img {
   opacity: 0.3;
 }
 
-.hotels-filter-control-input:disabled,
-.hotels-filter-control-input:disabled + .hotels-filter-control {
+.hotels-filter-item:has(.hotels-filter-control-input:disabled) {
    opacity: 0.1;
    pointer-events: none;
    cursor: auto;
@@ -1024,7 +1028,7 @@ img {
 
 .hotels-filter-price-from,
 .hotels-filter-price-to  {
-  padding: 12px 20px 11px;
+  padding: 12px 45px 11px 20px;
   width: 143px;
   -webkit-appearance: textfield;
      -moz-appearance: textfield;
@@ -1248,7 +1252,6 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 20px;
-  place-items: center;
   box-shadow: 0 1px 0 0 var(--shadow-middle-color);
 }
 
@@ -1381,7 +1384,6 @@ img {
   align-items: center;
   min-width: 60px;
   border-radius: 4px;
-  cursor: pointer;
 }
 
 .pagination-link {
@@ -1390,6 +1392,7 @@ img {
   line-height: 36px;
   color: var(--text-on-bg-color);
   background-color: var(--button-bg-secondary);
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
