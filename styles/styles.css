@@ -95,9 +95,6 @@ body {
   font-style: normal;
   line-height: 26px;
   color: var(--text-primary-color);
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   background-color: var(--bg-ultralight-color);
 }
 
@@ -159,6 +156,9 @@ img {
   color: var(--text-on-bg-color);
   text-align: center;
   text-transform: uppercase;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   background-color: var(--button-bg-basic);
   border-radius: 4px;
   border: none;
@@ -269,7 +269,7 @@ img {
 
 /* Общие стили для полей ввода */
 .field-input {
-  padding: 16px 20px 13px;
+  padding: 15px 20px 13px;
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;
@@ -310,7 +310,7 @@ img {
 
 .nav-logo {
   z-index: 2;
-  margin-right: 28px;
+  margin-right: 30px;
   margin-bottom: -5px;
   align-self: start;
   transition: opacity 0.3s ease-in-out;
@@ -331,7 +331,7 @@ img {
   justify-content: space-between;
   align-items: center;
   min-width: 710px;
-  max-width: 712px;
+  max-width: 710px;
 }
 
 .nav-list {
@@ -365,7 +365,7 @@ img {
 }
 
 .nav-link-current.nav-link {
-  padding: 20px 12px 0;
+  padding-bottom: 0;
   pointer-events: none;
 }
 
@@ -424,7 +424,7 @@ img {
 .counter {
   position: absolute;
   top: 15%;
-  left: 50%;
+  left: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,8 +453,8 @@ img {
 }
 
 .welcome-section {
-  padding: 50px 70px 77px;
-  /* background-image: url("../images/backgrounds/welcome-bg-bottom.svg"),
+  padding: 50px 70px 75px;
+  background-image: url("../images/backgrounds/welcome-bg-bottom.svg"),
   -webkit-image-set(
     url("../images/backgrounds/welcome-bg@2x.avif") type("image/avif") 2x,
     url("../images/backgrounds/welcome-bg@1x.avif") type("image/avif") 1x,
@@ -472,12 +472,10 @@ img {
     url("../images/backgrounds/welcome-bg@1x.webp") type("image/webp") 1x,
     url("../images/backgrounds/welcome-bg@2x.jpg") type("image/jpg") 2x,
     url("../images/backgrounds/welcome-bg@1x.jpg") type("image/jpg") 1x
-  ); */
-  background-image: url("../images/backgrounds/welcome-bg-bottom.svg"),
-  url("../images/backgrounds/welcome-bg@1x.jpg");
+  );
   background-repeat: no-repeat;
   background-size: 100% auto, cover;
-  background-position: left bottom -1px, left top;
+  background-position: left bottom -2px, left top;
 }
 
 /* Преимущества и Инфраструктура */
@@ -489,7 +487,7 @@ img {
 .advantages-header,
 .infrastructure-header {
   margin: 0 auto 90px;
-  padding: 69px 70px 0;
+  padding: 70px 70px 0;
   max-width: 795px;
 }
 
@@ -512,7 +510,7 @@ img {
 
 /* Блок */
 .box:not(.box-with-image) {
-  padding: 81px 85px;
+  padding: 82px 84px;
   flex-grow: 1;
   width: 400px;
   min-height: 385px;
@@ -545,7 +543,6 @@ img {
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
-  hyphens: auto;
 }
 
 .box-decor-title::after {
@@ -630,7 +627,7 @@ img {
 }
 
 .newsletter-main-index {
-  /* background-image: -webkit-image-set(
+  background-image: -webkit-image-set(
     url("../images/backgrounds/newsletter-bg.avif") type("image/avif"),
     url("../images/backgrounds/newsletter-bg.webp") type("image/webp"),
     url("../images/backgrounds/newsletter-bg.jpg") type("image/jpg")
@@ -639,8 +636,7 @@ img {
     url("../images/backgrounds/newsletter-bg.avif") type("image/avif"),
     url("../images/backgrounds/newsletter-bg.webp") type("image/webp"),
     url("../images/backgrounds/newsletter-bg.jpg") type("image/jpg")
-  ); */
-  background-image: url("../images/backgrounds/newsletter-bg.jpg");
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left top;
@@ -674,7 +670,7 @@ img {
 .page-footer {
   --width-social-link: 48px;
   --row-size: 3;
-  padding: 45px 70px 35px;
+  padding: 47px 70px 35px;
   display: flex;
   justify-content: space-between;
   column-gap: 40px;
@@ -795,7 +791,7 @@ img {
 /* Шапка фильтра гостиниц */
 .hotels-filter {
   padding: 34px 70px 70px;
-  /* background-image: -webkit-image-set(
+  background-image: -webkit-image-set(
     url("../images/backgrounds/hotels-filter-form-bg.avif") type("image/avif"),
     url("../images/backgrounds/hotels-filter-form-bg.webp") type("image/webp"),
     url("../images/backgrounds/hotels-filter-form-bg.jpg") type("image/jpg")
@@ -804,8 +800,7 @@ img {
     url("../images/backgrounds/hotels-filter-form-bg.avif") type("image/avif"),
     url("../images/backgrounds/hotels-filter-form-bg.webp") type("image/webp"),
     url("../images/backgrounds/hotels-filter-form-bg.jpg") type("image/jpg")
-  ); */
-  background-image: url("../images/backgrounds/hotels-filter-form-bg.jpg");
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left top;
@@ -1007,7 +1002,7 @@ img {
 .hotels-filter-price {
   display: grid;
   grid-template-columns: 144px 144px;
-  row-gap: 42px;
+  row-gap: 44px;
 }
 
 .input-wrap {
