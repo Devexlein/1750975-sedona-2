@@ -33,7 +33,7 @@
   --bg-secondary-color: #82b3d3;
   --bg-secondary-rgba20-color: rgba(131, 179, 211, 0.2);
   --bg-secondary-rgba12-color: rgba(131, 179, 211, 0.12);
-  --bg-duplicate-color: #bbd4ea;
+  --bg-duplicate-color: #6e8495;
   --bg-ultralight-color: #f2f2f2;
   --bg-transparent: transparent;
   --bg-overlay-color: rgba(242, 242, 242, 0.8);
@@ -736,6 +736,12 @@ img {
 .youtube::before {
   -webkit-mask-image: url("../images/icons/social-youtube.svg");
           mask-image: url("../images/icons/social-youtube.svg");
+}
+
+.footer-phones-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
 }
 
 .footer-contact-phone {
